@@ -8,6 +8,6 @@ Compilation can be done using `make` and `gcc` on windows or you can compile the
 
 Note: All the following keys **must** be used with Caps Lock **OFF**!  
 `wasd` to move the snake. Press any of the these keys to start the game.  
-`x` or `c` or `q` or `e` to quit. Can also do it with `Ctrl+c`
+`q` to quit. Can also do it with `Ctrl+c`
 
 ###### developed by @krishna2803
