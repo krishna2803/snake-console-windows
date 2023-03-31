@@ -1,4 +1,5 @@
 # Windows Console Snake Game
+<img src="img/snek.PNG" />
 Console based snake game for windows. I have no intention of porting this to Linux.  
 Only works on windows because of dependence on `kbhit()` and `getch()`.  
 
