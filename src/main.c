@@ -3,20 +3,18 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
-#include <stdint.h>
 #include <stdbool.h>
 
 // some non standard fuckery
 #include <conio.h>
 
-
-// keep this low
+// adjust this according for desirable "game speed"
 const int FPS = 8;
 
-// size of the grid (number of rows and columns)
+// size of the grid
 const int SIZE = 12;
 
-
+// linked list implementation
 typedef struct Snake {
     int x;
     int y;
@@ -105,16 +103,15 @@ int main(int argc, char **argv) {
     head.y = (SIZE-1)>>1;
     head.next = NULL;
 
-    {
-        Snake *snek = &head;
-        for (int i=0; i<3; i++) {
-            if (!snek->next) {
-                snek->next = malloc(sizeof(Snake));
-                snek->next->x = snek->x-1;
-                snek->next->y = snek->y;
-                snek->next->next = NULL;
-                snek = snek->next;
-            }
+
+    Snake *snek = &head;
+    for (int i=0; i<3; i++) {
+        if (!snek->next) {
+            snek->next = malloc(sizeof(Snake));
+            snek->next->x = snek->x-1;
+            snek->next->y = snek->y;
+            snek->next->next = NULL;
+            snek = snek->next;
         }
     }
     
@@ -151,9 +148,6 @@ int main(int argc, char **argv) {
             char key = getch();
             switch (key) {
             case 'q':
-            case 'c':
-            case 'x':
-            case 'e':
                 exit = true;
                 break;
 
